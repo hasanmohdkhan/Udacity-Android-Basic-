@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by hasanZian on 02-03-2018.
+ * Main activity for app
  */
 
 public class Adaptor extends ArrayAdapter<ListModel> {
@@ -34,16 +34,21 @@ public class Adaptor extends ArrayAdapter<ListModel> {
         }
 
         ListModel currentListItemPostion = getItem(position);
-        RelativeLayout relativeLayout = (RelativeLayout)listItemView.findViewById(R.id.background);
-        if(position == 1){
+        RelativeLayout relativeLayout = listItemView.findViewById(R.id.background);
+        if(position % 2 == 0){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 relativeLayout.setBackground(getContext().getDrawable(R.drawable.gradient_two));
             }
+         }
+        else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                relativeLayout.setBackground(getContext().getDrawable(R.drawable.gradient));
+            }
         }
 
-        TextView projectTitle = (TextView)listItemView.findViewById(R.id.project_title);
-        TextView projectInfo = (TextView)listItemView.findViewById(R.id.project_info);
-        ImageView image = (ImageView)listItemView.findViewById(R.id.project_thumbnail);
+        TextView projectTitle = listItemView.findViewById(R.id.project_title);
+        TextView projectInfo = listItemView.findViewById(R.id.project_info);
+        ImageView image = listItemView.findViewById(R.id.project_thumbnail);
         projectTitle.setText(currentListItemPostion.getmProjectTitle());
         projectInfo.setText(currentListItemPostion.getmProjectInfo());
         image.setImageResource(currentListItemPostion.getmImageResourcesID());

@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         text.setSpan(new ForegroundColorSpan(Color.BLACK), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         actionBar.setTitle(text);
 
-        ArrayList<ListModel> list = new ArrayList<ListModel>();
+        ArrayList<ListModel> list = new ArrayList<>();
         list.add(new ListModel(getString(R.string.project_title),getString(R.string.profile_info_intro),R.drawable.music));
         list.add(new ListModel(getString(R.string.project_title),getString(R.string.profile_info_intro),R.drawable.project));
         list.add(new ListModel(getString(R.string.project_title),getString(R.string.profile_info_intro),R.drawable.music));
-        ListView listView = (ListView)findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
         mAdapter = new Adaptor(this,list);
         listView.setAdapter(mAdapter);
 
@@ -39,9 +39,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu , menu);
-        // Get the SearchView and set the searchable configuration
-
-
         return true;
     }
 }
