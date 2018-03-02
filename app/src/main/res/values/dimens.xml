@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="margin_left_16dp">16dp</dimen>
+    <dimen name="margin_top">16dp</dimen>
+    <dimen name="margin_project_card">32dp</dimen>
+</resources>
